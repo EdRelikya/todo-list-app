@@ -1,0 +1,45 @@
+
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>To-do List Simples</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="icon" style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:#022023">TL</div>
+      <div>
+        <h1>Lista de atividades</h1>
+        <div style="color:var(--muted);font-size:0.9rem">Adicione, edite, marque e persista suas tarefas.</div>
+      </div>
+    </header>
+
+    <div class="card">
+      <form id="newForm" class="new-form" onsubmit="return false">
+        <input id="newInput" type="text" placeholder="O que você quer fazer? (pressione Enter ou clique em +)" autocomplete="off">
+        <button id="addBtn">+</button>
+      </form>
+
+      <ul id="todoList" class="todo-list" aria-live="polite"></ul>
+
+      <div class="meta">
+        <div id="countText">0 tarefas</div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <div class="filters" role="tablist">
+            <button class="filter active" data-filter="all">Todas</button>
+            <button class="filter" data-filter="active">Ativas</button>
+            <button class="filter" data-filter="completed">Completas</button>
+          </div>
+          <button id="clearCompleted" class="btn">Limpar completas</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
