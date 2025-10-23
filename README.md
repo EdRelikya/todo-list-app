@@ -27,4 +27,4 @@ Abra o arquivo `index.html` no navegador ou acesse a versão online.
 
 ## 👥 Equipe
 
-Trabalho em grupo - Disciplina de [Nome da Disciplina]
+Trabalho em grupo - Disciplina de [Engenharia de software]
