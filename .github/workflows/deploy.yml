@@ -1,0 +1,29 @@
+name: CI/CD Pipeline
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      # Configura o ambiente Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # Instala as dependências (com NPM)
+      - name: Install dependencies
+        run: npm install
+
+      # Roda os testes (com NPM)
+      - name: Run tests
+        run: npm test
+
+      # Faz o deploy se os testes passarem
+      - name: Deploy to Render
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
